@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { alert, invertString } from './modules/functions';
+import FancyText from './modules/fancy-text';
 
 export default class Main extends React.Component {
     componentDidMount() {
@@ -12,8 +13,7 @@ export default class Main extends React.Component {
 
         return (
             <div>
-
-
+                <FancyText>{helloReversed}</FancyText>
             </div>
         )
     }
