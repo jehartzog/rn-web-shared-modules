@@ -8,9 +8,16 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "postinstall": "npm run copy-modules",
+    "copy-modules": "rm -rf ./src/modules/ && cp -af ../modules/src/ ./src/modules/",
+    "copy-modules:watch": "while :; do clear; echo 'Copying modules for native, quit this process to stop...'; rsync -av ../modules/src/ ./src/modules/; sleep 3; done",
+    "start": "npm-run-all -p start:cra copy-modules:watch",
+    "start:cra": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.3"
   }
 }

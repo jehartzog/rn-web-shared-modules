@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.14.0",
     "jest-expo": "~27.0.0",
+    "npm-run-all": "^4.1.3",
+    "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "postinstall": "npm run copy-modules",
+    "copy-modules": "rm -rf ./src/modules/ && cp -af ../modules/src/ ./src/modules/",
+    "copy-modules:watch": "while :; do clear; echo 'Copying modules for native, quit this process to stop...'; rsync -av ../modules/src/ ./src/modules/; sleep 1; done",
+    "start": "npm-run-all -p start:crna copy-modules:watch",
+    "start:crna": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
