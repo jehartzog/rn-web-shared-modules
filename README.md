@@ -1,4 +1,4 @@
-An example of running shared code modules in a related React Native and React web app.
+An example of running shared code modules in a related React Native and React web app, using the lessons learned described in [this post](https://www.erichartzog.com/blog/module-code-sharing-for-react-native-and-web).
 
 ## Native App startup
 
