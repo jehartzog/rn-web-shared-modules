@@ -1,5 +1,9 @@
 An example of running shared code modules in a related React Native and React web app, using the lessons learned described in [this post](https://www.erichartzog.com/blog/module-code-sharing-for-react-native-and-web).
 
+## Update with possibly better alternative
+
+After I wrote this, I found [wix/wml](https://github.com/wix/wml) which appears to be a cleaner way to do what I've implemented here. If I was implementing this now I'd definintely give the wml tool a shot.
+
 ## Native App startup
 
 ```sh
